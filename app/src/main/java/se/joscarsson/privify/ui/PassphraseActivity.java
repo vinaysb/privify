@@ -119,6 +119,7 @@ public class PassphraseActivity extends AppCompatActivity implements TextView.On
         String salt = this.preferences.getString("salt", null);
         Pair<String, String> newHash = Cryptography.hash(passphrase, salt);
 
+        assert currentHash != null;
         if (!currentHash.equals(newHash.first)) return false;
 
         PassphraseActivity.passphrase = passphrase;
