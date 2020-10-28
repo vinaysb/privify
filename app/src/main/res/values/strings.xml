@@ -2,4 +2,8 @@
     <string name="app_name">Privify</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="repeat_passphrase">Repeat passphrase</string>
+    <string name="login">Login</string>
+    <string name="passphrase">Passphrase</string>
+    <string name="privify_icon">Privify Icon</string>
 </resources>

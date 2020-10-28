@@ -10,6 +10,7 @@ import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -51,6 +52,14 @@ public class PassphraseActivity extends AppCompatActivity implements TextView.On
         this.passphraseRepeatEditText = findViewById(R.id.passphrase_repeat_edit_text);
         this.passphraseRepeatEditText.setOnEditorActionListener(this);
 
+        Button loginButton = findViewById(R.id.login);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login();
+            }
+        });
+
         this.passphraseSet = this.preferences.contains("passphrase");
 
         if (!this.passphraseSet) {
@@ -64,6 +73,10 @@ public class PassphraseActivity extends AppCompatActivity implements TextView.On
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         if (actionId != EditorInfo.IME_ACTION_DONE) return false;
 
+        return login();
+    }
+
+    private boolean login(){
         String passphrase = this.passphraseEditText.getText().toString();
         if (passphrase.length() == 0) {
             this.passphraseEditText.setError("Input passphrase.");
