@@ -109,7 +109,7 @@ public class PassphraseActivity extends AppCompatActivity implements TextView.On
                 .edit()
                 .putString("passphrase", newHash.first)
                 .putString("salt", newHash.second)
-                .commit();
+                .apply();
 
         PassphraseActivity.passphrase = passphrase;
     }
