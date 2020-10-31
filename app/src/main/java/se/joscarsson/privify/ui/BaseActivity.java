@@ -1,11 +1,13 @@
 package se.joscarsson.privify.ui;
 
 import android.content.Intent;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -52,7 +54,7 @@ public abstract class BaseActivity extends AppCompatActivity implements MenuItem
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         return this.drawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
@@ -64,17 +66,17 @@ public abstract class BaseActivity extends AppCompatActivity implements MenuItem
     }
 
     @Override
-    public void onDrawerSlide(View drawerView, float slideOffset) {
+    public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
 
     }
 
     @Override
-    public void onDrawerOpened(View drawerView) {
+    public void onDrawerOpened(@NonNull View drawerView) {
 
     }
 
     @Override
-    public void onDrawerClosed(View drawerView) {
+    public void onDrawerClosed(@NonNull View drawerView) {
         if (this.selectedMenuId == getMenuItemId()) return;
 
         if (this.selectedMenuId == R.id.settings_menu_item) {

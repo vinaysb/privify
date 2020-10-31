@@ -19,11 +19,11 @@ import java.util.Set;
 import se.joscarsson.privify.R;
 
 public class FileListAdapter extends BaseAdapter {
-    private Context context;
+    private final Context context;
     private List<PrivifyFile> files;
-    private Set<PrivifyFile> selectedFiles;
+    private final Set<PrivifyFile> selectedFiles;
     private PrivifyFile currentDirectory;
-    private OnChangeListener listener;
+    private final OnChangeListener listener;
     private boolean checkboxesEnabled;
 
     public FileListAdapter(Context context, OnChangeListener listener) {

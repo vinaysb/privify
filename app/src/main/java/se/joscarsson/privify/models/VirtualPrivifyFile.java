@@ -3,7 +3,7 @@ package se.joscarsson.privify.models;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,9 +12,9 @@ import java.io.OutputStream;
 import java.util.List;
 
 public class VirtualPrivifyFile implements PrivifyFile {
-    private String name;
-    private int size;
-    private InputStream inputStream;
+    private final String name;
+    private final int size;
+    private final InputStream inputStream;
 
     public VirtualPrivifyFile(String name, int size, InputStream inputStream) {
         this.name = name;
@@ -95,12 +95,12 @@ public class VirtualPrivifyFile implements PrivifyFile {
     }
 
     @Override
-    public OutputStream getOutputStream() throws FileNotFoundException {
+    public OutputStream getOutputStream() {
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public InputStream getInputStream() throws FileNotFoundException {
+    public InputStream getInputStream() {
         return this.inputStream;
     }
 

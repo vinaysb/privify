@@ -19,8 +19,8 @@ import se.joscarsson.privify.models.PrivifyFile;
 import se.joscarsson.privify.ui.UserInterfaceHandler;
 
 public class EncryptionEngine {
-    private Executor executor = Executors.newSingleThreadExecutor();
-    private UserInterfaceHandler uiHandler;
+    private final Executor executor = Executors.newSingleThreadExecutor();
+    private final UserInterfaceHandler uiHandler;
 
     public EncryptionEngine(UserInterfaceHandler uiHandler) {
         this.uiHandler = uiHandler;
@@ -30,7 +30,7 @@ public class EncryptionEngine {
         this.uiHandler.sendWorkBegun();
 
         this.executor.execute(new Runnable() {
-            private byte[] buffer = new byte[1024*1024];
+            private final byte[] buffer = new byte[1024*1024];
             private long processedBytes = 0;
             private long totalBytes = 0;
             private boolean decrypting = true;

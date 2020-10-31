@@ -1,7 +1,9 @@
 package se.joscarsson.privify.ui;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.view.MenuItem;
 
 import se.joscarsson.privify.R;
@@ -15,7 +17,7 @@ public class SettingsActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         onBackPressed();
         return true;
     }

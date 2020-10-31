@@ -36,6 +36,7 @@ public class MainActivity extends FileBrowserActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_CANCELED) {
             if (hasShareIntent()) this.notificationHelper.toast("Share to Privify cancelled.");
             finish();
@@ -107,9 +108,7 @@ public class MainActivity extends FileBrowserActivity {
         if (intent == null) return false;
         if (!Intent.ACTION_SEND.equals(intent.getAction())) return false;
         if ((intent.getFlags() & Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY) != 0) return false;
-        if (intent.hasExtra("se.joscarsson.privify.Consumed")) return false;
-
-        return true;
+        return !intent.hasExtra("se.joscarsson.privify.Consumed");
     }
 
     private void handleShareIntent() {

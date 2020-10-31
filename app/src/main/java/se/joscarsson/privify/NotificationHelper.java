@@ -3,13 +3,13 @@ package se.joscarsson.privify;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.widget.Toast;
 
 public class NotificationHelper {
-    private Context context;
-    private NotificationManager manager;
-    private NotificationCompat.Builder builder;
+    private final Context context;
+    private final NotificationManager manager;
+    private final NotificationCompat.Builder builder;
 
     public NotificationHelper(Context context) {
         this.context = context;

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.design.widget.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import android.widget.BaseAdapter;
 
 import se.joscarsson.privify.NotificationHelper;
@@ -16,9 +16,9 @@ public class UserInterfaceHandler extends Handler {
     private static final int MESSAGE_WORK_ERROR = 3;
     private static final int MESSAGE_PROGRESS_UPDATE = 4;
 
-    private FloatingActionButton button;
-    private BaseAdapter adapter;
-    private NotificationHelper notificationHelper;
+    private final FloatingActionButton button;
+    private final BaseAdapter adapter;
+    private final NotificationHelper notificationHelper;
 
     UserInterfaceHandler(FloatingActionButton button, BaseAdapter adapter, NotificationHelper notificationHelper) {
         super(Looper.getMainLooper());

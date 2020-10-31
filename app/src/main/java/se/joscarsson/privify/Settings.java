@@ -33,7 +33,7 @@ public class Settings {
     }
 
     public static void setShareTargetDirectory(Context context, PrivifyFile directory) {
-        preferences(context).edit().putString("share_target_directory", directory.getPath()).commit();
+        preferences(context).edit().putString("share_target_directory", directory.getPath()).apply();
     }
 
     private static SharedPreferences preferences(Context context) {

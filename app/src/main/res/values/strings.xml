@@ -6,4 +6,8 @@
     <string name="login">Login</string>
     <string name="passphrase">Passphrase</string>
     <string name="privify_icon">Privify Icon</string>
+    <string name="this_folder_is_empty">This folder is empty.</string>
+    <string name="lock_files">Lock Files</string>
+    <string name="open_files">Open files</string>
+    <string name="enter_your_app_password">Enter your app password</string>
 </resources>
